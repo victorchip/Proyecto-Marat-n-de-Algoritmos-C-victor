@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int suma_total = 0; // El acumulador debe empezar en cero
+    int limite = 5;
+
+    cout << "Calculando la suma de los numeros del 1 al " << limite << endl;
+
+    // En cada paso, el valor de 'suma_total' se actualiza
+    for (int i = 1; i <= limite; i++) {
+        // Sumamos el valor actual de 'i' al total
+        suma_total = suma_total + i; // O: suma_total += i;
+    }
+
+    cout << "La suma total es: " << suma_total << " (1 + 2 + 3 + 4 + 5)" << endl; 
+    return 0;
+}
