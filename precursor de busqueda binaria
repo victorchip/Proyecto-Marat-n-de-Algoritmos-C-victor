@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numeros[] = {15, 22, 38, 41, 59}; // Arreglo (array) simple
+    int tamano = 5;
+    int valor_buscar;
+    bool encontrado = false;
+
+    cout << "Arreglo fijo: {15, 22, 38, 41, 59}" << endl;
+    cout << "Ingresa el numero que deseas encontrar: ";
+    cin >> valor_buscar;
+
+    // Recorrer cada posicion del arreglo
+    for (int i = 0; i < tamano; i++) {
+        // Usar un 'if' para comparar
+        if (numeros[i] == valor_buscar) {
+            encontrado = true;
+            break; // Salir del ciclo tan pronto como se encuentra
+        }
+    }
+
+    if (encontrado) {
+        cout << "¡El numero " << valor_buscar << " fue encontrado en la lista!" << endl;
+    } else {
+        cout << "El numero " << valor_buscar << " NO se encuentra en la lista." << endl;
+    }
+
+    return 0;
+}
