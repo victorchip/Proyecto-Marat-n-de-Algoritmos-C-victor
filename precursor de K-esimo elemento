@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int datos[] = {5, 12, 9, 70, 4, 15};
+    int tamano = 6;
+    
+    // Inicializar 'maximo' con el primer valor
+    int maximo = datos[0]; 
+
+    cout << "Arreglo: {5, 12, 9, 70, 4, 15}" << endl;
+
+    // Recorrer el arreglo para encontrar el mayor
+    for (int i = 1; i < tamano; i++) {
+        // Comparar el valor actual con el 'maximo' guardado
+        if (datos[i] > maximo) {
+            maximo = datos[i]; // Actualizar si se encuentra uno mas grande
+        }
+    }
+
+    cout << "El numero mas grande encontrado es: " << maximo << endl;
+    return 0;
+}
