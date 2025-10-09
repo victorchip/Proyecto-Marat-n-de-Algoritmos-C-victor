@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    int n,S;
+    cout<<"Ingrese número de elementos y suma objetivo: ";
+    cin>>n>>S;
+    vector<int> arr(n);
+    cout<<"Ingrese elementos:\n";
+    for(int i=0;i<n;i++) cin>>arr[i];
+
+    vector<vector<bool>> dp(n+1,vector<bool>(S+1,false));
+    for(int i=0;i<=n;i++) dp[i][0]=true;
+
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=S;j++){
+            if(arr[i-1]<=j) dp[i][j]=dp[i-1][j] || dp[i-1][j-arr[i-1]];
+            else dp[i][j]=dp[i-1][j];
+        }
+    }
+
+    if(dp[n][S]) cout<<"Sí, existe un subconjunto que suma "<<S<<endl;
+    else cout<<"No, no existe un subconjunto que suma "<<S<<endl;
+
+    return 0;
+}
