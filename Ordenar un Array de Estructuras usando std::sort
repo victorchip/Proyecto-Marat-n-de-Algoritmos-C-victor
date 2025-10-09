@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+struct Persona {
+    string nombre;
+    int edad;
+};
+
+int main() {
+    int n;
+    cout << "Ingrese número de personas: ";
+    cin >> n;
+    vector<Persona> personas(n);
+    for(int i=0;i<n;i++) {
+        cout << "Nombre: ";
+        cin >> personas[i].nombre;
+        cout << "Edad: ";
+        cin >> personas[i].edad;
+    }
+
+    sort(personas.begin(), personas.end(), [](Persona a, Persona b){ return a.edad < b.edad; });
+
+    cout << "Personas ordenadas por edad:\n";
+    for(auto p : personas) cout << p.nombre << " - " << p.edad << endl;
+
+    return 0;
+}
