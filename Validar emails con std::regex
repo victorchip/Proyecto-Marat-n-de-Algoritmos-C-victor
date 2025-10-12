@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+#include <regex>
+using namespace std;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    regex email(R"(^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$)");
+    string s;
+    while(cin >> s){
+        cout << s << ": " << (regex_match(s, email) ? "VALID" : "INVALID") << '\n';
+    }
+    return 0;
+}
+
