@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool cmp(string a, string b) {
+    transform(a.begin(), a.end(), a.begin(), ::tolower);
+    transform(b.begin(), b.end(), b.begin(), ::tolower);
+    return a < b;
+}
+
+int main() {
+    int n; cin >> n;
+    vector<string> v(n);
+    for (auto &s : v) cin >> s;
+    sort(v.begin(), v.end(), cmp);
+    for (auto &s : v) cout << s << '\n';
+}
