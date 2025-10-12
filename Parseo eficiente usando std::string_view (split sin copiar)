@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    string s;
+    getline(cin, s);
+    string_view sv(s);
+    size_t i=0;
+    while(i < sv.size()){
+        while(i<sv.size() && isspace((unsigned char)sv[i])) ++i;
+        if(i>=sv.size()) break;
+        size_t j=i;
+        while(j<sv.size() && !isspace((unsigned char)sv[j])) ++j;
+        cout << sv.substr(i, j-i) << '\n';
+        i = j;
+    }
+    return 0;
+}
+
