@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n; if(!(cin>>n)) return 0;
+    vector<string> v(n);
+    for(int i=0;i<n;++i) cin>>v[i];
+    for(auto &s: v) transform(s.begin(), s.end(), s.begin(), ::tolower);
+    sort(v.begin(), v.end());
+    v.erase(unique(v.begin(), v.end()), v.end());
+    for(auto &s: v) cout << s << '\n';
+    return 0;
+}
