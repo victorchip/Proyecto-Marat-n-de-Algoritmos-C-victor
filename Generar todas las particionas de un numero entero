@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void partition(int n, int max_val, vector<int>& cur) {
+    if (n == 0) {
+        for (int x : cur) cout << x << ' ';
+        cout << '\n';
+        return;
+    }
+    for (int i = min(n, max_val); i >= 1; --i) {
+        cur.push_back(i);
+        partition(n - i, i, cur);
+        cur.pop_back();
+    }
+}
+
+int main() {
+    int n; cin >> n;
+    vector<int> cur;
+    partition(n, n, cur);
+}
