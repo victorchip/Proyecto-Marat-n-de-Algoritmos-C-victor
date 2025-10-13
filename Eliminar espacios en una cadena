@@ -1,0 +1,12 @@
+#include <string>
+using namespace std;
+
+int main() {
+    string s;
+    cout << "Ingresa línea: ";
+    getline(cin, s);
+    string out;
+    for (char c : s) if (c != ' ') out.push_back(c);
+    cout << "Sin espacios: " << out << endl;
+    return 0;
+}
