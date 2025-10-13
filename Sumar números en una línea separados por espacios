@@ -1,0 +1,14 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+using namespace std;
+
+int main() {
+    string linea; getline(cin, linea);
+    istringstream iss(linea);
+    int x, suma=0;
+    while (iss >> x) suma += x;
+    cout << "Suma: " << suma << endl;
+    return 0;
+}
+
