@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingresa un entero (3 dígitos): ";
+    cin >> n;
+    int original = n, suma = 0;
+    while (n) {
+        int d = n % 10;
+        suma += d*d*d;
+        n /= 10;
+    }
+    cout << (suma == original ? "Es Armstrong\n" : "No es Armstrong\n");
+    return 0;
+{
