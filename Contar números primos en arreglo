@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+bool esPrimo(int n){
+    if (n<=1) return false;
+    for (int i=2;i*i<=n;++i) if (n%i==0) return false;
+    return true;
+}
+
+int main() {
+    int N; cin >> N;
+    int cnt=0, x;
+    for (int i=0;i<N;++i){ cin>>x; if (esPrimo(x)) ++cnt; }
+    cout << "Primos: " << cnt << endl;
+    return 0;
+}
