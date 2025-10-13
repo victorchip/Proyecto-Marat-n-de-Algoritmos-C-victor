@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cout << "Cuántos elementos?: ";
+    cin >> N;
+    int maxVal, pos=0, x;
+    if (N <= 0) { cout << "N inválido\n"; return 0; }
+    for (int i=1;i<=N;++i){
+        cin >> x;
+        if (i==1 || x > maxVal) { maxVal = x; pos = i; }
+    }
+    cout << "Mayor: " << maxVal << " en posición " << pos << endl;
+    return 0;
+}
+
