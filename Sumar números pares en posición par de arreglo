@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N; cin >> N;
+    int x, suma=0;
+    for (int i=1;i<=N;++i) { cin>>x; if (i%2==0) suma+=x; }
+    cout << "Suma posiciones pares: " << suma << endl;
+    return 0;
+}
+
