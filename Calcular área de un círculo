@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double r;
+    cout << "Radio: ";
+    cin >> r;
+    const double PI = 3.14159;
+    cout << "Área: " << PI * r * r << endl;
+    return 0;
+}
+
+
