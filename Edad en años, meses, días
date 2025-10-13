@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int dias; cin >> dias;
+    int años = dias / 365;
+    dias %= 365;
+    int meses = dias / 30;
+    dias %= 30;
+    cout << años << " años, " << meses << " meses, " << dias << " días\n";
+    return 0;
+}
+
