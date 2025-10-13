@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string s;
+    char a, b;
+    cout << "Ingresa cadena: ";
+    getline(cin, s);
+    cout << "Reemplazar qué caracter? ";
+    cin >> a;
+    cout << "Por qué caracter? ";
+    cin >> b;
+    for (int i=0;i<(int)s.size();++i) if (s[i]==a) s[i]=b;
+    cout << "Resultado: " << s << endl;
+    return 0;
+}
+
