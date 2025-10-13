@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string linea;
+    cout << "Ingresa línea: ";
+    getline(cin, linea);
+    int v=0, c=0;
+    for (char ch : linea) {
+        char l = tolower(ch);
+        if (l>='a' && l<='z') {
+            if (l=='a'||l=='e'||l=='i'||l=='o'||l=='u') ++v;
+            else ++c;
+        }
+    }
+    cout << "Vocales: " << v << " Consonantes: " << c << endl;
+    return 0;
+}
+
+
