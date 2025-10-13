@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n; cout << "N (1-10): "; cin >> n;
+    string rom[] = {"","I","II","III","IV","V","VI","VII","VIII","IX","X"};
+    if (n>=1 && n<=10) cout << rom[n] << endl;
+    else cout << "Fuera de rango\n";
+    return 0;
+}
+
