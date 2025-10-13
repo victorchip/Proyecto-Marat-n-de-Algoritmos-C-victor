@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string s;
+    char c;
+    cout << "Ingresa cadena: ";
+    getline(cin, s);
+    cout << "Ingresa un carácter: ";
+    cin >> c;
+    int cnt = 0;
+    for (char ch : s) if (ch == c) ++cnt;
+    cout << "Aparece " << cnt << " veces\n";
+    return 0;
+}
+
