@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingresa N: ";
+    cin >> n;
+    int suma = 0;
+    for (int i = 1; i <= n/2; ++i) if (n % i == 0) suma += i;
+    if (suma == n) cout << n << " es perfecto\n";
+    else cout << n << " no es perfecto\n";
+    return 0;
+}
+
