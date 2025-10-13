@@ -1,0 +1,13 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double P, r, t;
+    cout << "P r t: ";
+    cin >> P >> r >> t;
+    double A = P * pow(1 + r, t);
+    cout << "Monto compuesto: " << A << endl;
+    return 0;
+}
+
