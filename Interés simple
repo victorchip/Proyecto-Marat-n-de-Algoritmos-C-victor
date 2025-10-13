@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double P, r, t;
+    cout << "P r t: ";
+    cin >> P >> r >> t;
+    double A = P * (1 + r * t);
+    cout << "Monto: " << A << endl;
+    return 0;
+}
+
