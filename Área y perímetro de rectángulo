@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double b, h;
+    cout << "Base y altura: ";
+    cin >> b >> h;
+    cout << "Área: " << (b*h) << " Perímetro: " << (2*(b+h)) << endl;
+    return 0;
+}
+
