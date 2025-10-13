@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N; cout << "N: "; cin >> N;
+    long long suma = 0;
+    for (int i=1;i<=N;++i) suma += (long long)i*i;
+    cout << "Suma cuadrados: " << suma << endl;
+    return 0;
+}
+
