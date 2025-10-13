@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b;
+    cout << "Ingresa a y b (b != 0): ";
+    cin >> a >> b;
+    if (b == 0) cout << "Error: division por cero\n";
+    else cout << "a/b = " << (a / b) << " (división entera)\n";
+    return 0;
+}
