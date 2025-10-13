@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int mins; cin >> mins;
+    int h = mins / 60;
+    int m = mins % 60;
+    cout << h << " horas " << m << " minutos\n";
+    return 0;
+}
+
