@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string s;
+    cout << "Palabra: ";
+    cin >> s;
+    int v=0, c=0;
+    for (char ch : s) {
+        char l = tolower(ch);
+        if (l>='a' && l<='z') {
+            if (l=='a'||l=='e'||l=='i'||l=='o'||l=='u') ++v;
+            else ++c;
+        }
+    }
