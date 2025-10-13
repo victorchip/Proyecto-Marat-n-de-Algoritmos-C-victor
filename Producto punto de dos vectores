@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N; cout << "N: "; cin >> N;
+    int a[1000], b[1000];
+    for (int i=0;i<N;++i) cin >> a[i];
+    for (int i=0;i<N;++i) cin >> b[i];
+    long long prod = 0;
+    for (int i=0;i<N;++i) prod += (long long)a[i]*b[i];
+    cout << "Producto punto: " << prod << endl;
+    return 0;
+}
+
