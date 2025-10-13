@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double a, b, c;
+    cout << "Ingresa 3 números: ";
+    cin >> a >> b >> c;
+    double m = a;
+    if (b > m) m = b;
+    if (c > m) m = c;
+    cout << "Mayor: " << m << endl;
+    return 0;
+}
+
