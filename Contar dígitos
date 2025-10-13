@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingresa un entero positivo: ";
+    cin >> n;
+    if (n == 0) { cout << "Dígitos: 1\n"; return 0; }
+    int cnt = 0;
+    while (n != 0) { n /= 10; ++cnt; }
+    cout << "Dígitos: " << cnt << endl;
+    return 0;
+}
+
