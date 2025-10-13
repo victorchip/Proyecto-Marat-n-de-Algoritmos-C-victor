@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingresa un entero: ";
+    cin >> n;
+    int sign = (n < 0) ? -1 : 1;
+    if (n < 0) n = -n;
+    int rev = 0;
+    while (n != 0) {
+        rev = rev * 10 + (n % 10);
+        n /= 10;
+    }
+    cout << "Invertido: " << (sign * rev) << endl;
+    return 0;
+}
