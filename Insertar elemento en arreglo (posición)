@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N; cin >> N;
+    int a[1000];
+    for (int i=0;i<N;++i) cin >> a[i];
+    int v, p; cin >> v >> p;
+    if (p<1 || p> N+1) { cout << "Pos inválida\n"; return 0; }
+    for (int i=N;i>=p;--i) a[i] = a[i-1];
+    a[p-1] = v;
+    for (int i=0;i<N+1;++i) cout << a[i] << " ";
+    cout << endl;
+    return 0;
+}
+
