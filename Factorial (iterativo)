@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cout << "Ingresa N (>=0): ";
+    cin >> N;
+    long long fact = 1;
+    for (int i = 2; i <= N; ++i) fact *= i;
+    cout << N << "! = " << fact << endl;
+    return 0;
+}
