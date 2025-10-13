@@ -1,0 +1,18 @@
+Enunciado: Dado a1 (primer término), r (razón) y N, imprimir los N primeros términos.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double a1, r;
+    int N;
+    cout << "a1 r N: "; cin >> a1 >> r >> N;
+    double term = a1;
+    for (int i=0;i<N;++i) {
+        cout << term << " ";
+        term *= r;
+    }
+    cout << endl;
+    return 0;
+}
+
