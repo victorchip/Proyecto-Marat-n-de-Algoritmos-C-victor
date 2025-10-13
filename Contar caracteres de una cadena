@@ -1,0 +1,12 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string linea;
+    cout << "Ingresa una línea: ";
+    getline(cin, linea);
+    cout << "Longitud: " << linea.length() << endl;
+    return 0;
+}
+
