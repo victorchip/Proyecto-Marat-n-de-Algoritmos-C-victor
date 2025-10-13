@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n; cout << "Número: "; cin >> n;
+    n = (n<0)? -n : n;
+    int suma=0;
+    while (n){ int d=n%10; if (d%2==0) suma+=d; n/=10; }
+    cout << "Suma dígitos pares: " << suma << endl;
+    return 0;
+}
+
