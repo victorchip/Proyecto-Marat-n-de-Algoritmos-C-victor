@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n,m; if(!(cin>>n>>m)) return 0;
+    vector<int> adj(n,0);
+    for(int i=0;i<m;++i){
+        int u,v; cin>>u>>v;
+        adj[u] |= (1<<v);
+    }
+    int N = 1<<n;
+    vector<vector<unsigned long long>> dp(N, vector<unsigned long long>(n, 0));
+    for(int v=0; v<n; ++v) dp[1<<v][v] = 1;
+    for(int mask=1; mask<N; ++mask){
+        for(int v=0; v<n; ++v){
+            if(!(mask & (1<<v))) continue;
+            unsigned long long cur = dp[mask][v];
+            if(cur==0) continue;
+            int ways_to = adj[v] & (~mask); // neighbors not yet in mask
+            // we will extend by adding a new vertex 'u' (but common DP moves other way)
+        }
+        // classical fill: compute dp[mask][v] from smaller masks
+        // we'll do the standard inner loops
+    }
+    // correct standard transitions (recompute DP properly)
+    fill(dp.begin(), dp.end(), vector<unsigned long long>(n,0));
+    for(int v=0; v<n; ++v) dp[1<<v][v]=1;
+    for(int mask=1; mask<N; ++mask){
+        for(int last=0; last<n; ++last){
+            if(!(mask & (1<<last))) continue;
+            unsigned long long ways = dp[mask][last];
+            if(ways==0) continue;
+            int to_mask = adj[last] & (~mask);
+            for(int nxt = to_mask; nxt; nxt &= (nxt-1)){
+                int u = __builtin_ctz(nxt);
+                dp[mask | (1<<u)][u] += ways;
+            }
+        }
+    }
+    unsigned long long total = 0;
+    for(int v=0; v<n; ++v) total += dp[N-1][v];
+    cout<<total<<"\n";
+    return 0;
+}
+
