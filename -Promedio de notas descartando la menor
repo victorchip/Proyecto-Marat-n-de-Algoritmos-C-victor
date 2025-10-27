@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N; cin >> N;
+    double suma=0, x;
+    double minv=1e9;
+    for (int i=0;i<N;++i){ cin>>x; suma+=x; if (x<minv) minv=x; }
+    if (N<=1) cout << "No es posible\n";
+    else cout << "Promedio: " << ( (suma - minv) / (N-1) ) << endl;
+    return 0;
+}
