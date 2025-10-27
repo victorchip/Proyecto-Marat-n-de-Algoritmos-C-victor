@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N; cin >> N;
+    int prev, cur;
+    if (N<=0) { cout << "Sí (vacío)\n"; return 0; }
+    cin >> prev;
+    bool ok = true;
+    for (int i=1;i<N;++i) { cin>>cur; if (cur < prev) ok = false; prev = cur; }
+    cout << (ok ? "Ordenado\n" : "No ordenado\n");
+    return 0;
+}
+
