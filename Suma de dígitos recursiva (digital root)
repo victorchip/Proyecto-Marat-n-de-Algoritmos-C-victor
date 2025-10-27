@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    long long n; cin >> n;
+    n = (n<0)? -n : n;
+    while (n >= 10) {
+        long long s = 0;
+        while (n) { s += n%10; n/=10; }
+        n = s;
+    }
+    cout << n << endl;
+    return 0;
+}
+
+
