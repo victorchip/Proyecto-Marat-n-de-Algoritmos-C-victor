@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    map<string, int> freq;
+    string word;
+    while (cin >> word) freq[word]++;
+    for (auto& [w, c] : freq)
+        cout << w << ": " << c << '\n';
+}
+
