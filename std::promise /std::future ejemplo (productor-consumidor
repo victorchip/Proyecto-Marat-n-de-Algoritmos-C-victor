@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+#include <thread>
+using namespace std;
+
+int main(){
+    promise<int> prom;
+    future<int> fut = prom.get_future();
+
+    thread producer([&prom](){
+        this_thread::sleep_for(chrono::milliseconds(200));
+        prom.set_value(123);
+    });
+
+    thread consumer([&fut](){
+        cout << "Waiting for value...\n";
+        int v = fut.get();
+        cout << "Got value: " << v << '\n';
+    });
+
+    producer.join();
+    consumer.join();
+    return 0;
+}
+
