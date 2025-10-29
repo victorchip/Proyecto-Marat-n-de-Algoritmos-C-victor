@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[]={1,3,5,7}, n=4, x=5;
+    bool encontrado=false;
+    for(int i=0;i<n;i++) if(arr[i]==x) encontrado=true;
+    cout << (encontrado ? "Elemento encontrado\n" : "Elemento no encontrado\n"); // Encontrado
+    return 0;
+}
+
