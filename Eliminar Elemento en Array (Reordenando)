@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[]={1,2,3,4,2}, n=5, x=2;
+    int nuevo_n=0;
+    for(int i=0;i<n;i++){
+        if(arr[i]!=x) arr[nuevo_n++]=arr[i];
+    }
+    for(int i=0;i<nuevo_n;i++) cout << arr[i] << " "; // 1 3 4
+    cout << endl;
+    return 0;
+}
+
