@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[]={1,2,2,3,2}, n=5, x=2, contador=0;
+    for(int i=0;i<n;i++) if(arr[i]==x) contador++;
+    cout << "El elemento " << x << " aparece " << contador << " veces.\n"; // 3
+    return 0;
+}
+
