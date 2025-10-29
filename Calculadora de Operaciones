@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+float suma(float a,float b){return a+b;}
+float resta(float a,float b){return a-b;}
+float mult(float a,float b){return a*b;}
+float divi(float a,float b){return b!=0?a/b:0;}
+
+int main(){
+    float x=10,y=5;
+    cout << "Suma: " << suma(x,y) << endl;
+    cout << "Resta: " << resta(x,y) << endl;
+    cout << "Multiplicación: " << mult(x,y) << endl;
+    cout << "División: " << divi(x,y) << endl;
+    return 0;
+}
