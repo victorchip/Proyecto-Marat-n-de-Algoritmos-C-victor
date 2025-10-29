@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[]={0,2,0,3,0}, n=5, contador=0;
+    for(int i=0;i<n;i++) if(arr[i]==0) contador++;
+    cout << "Cantidad de ceros: " << contador << endl; // 3
+    return 0;
+}
+
