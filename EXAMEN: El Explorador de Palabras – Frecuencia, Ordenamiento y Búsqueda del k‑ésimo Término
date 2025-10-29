@@ -1,0 +1,68 @@
+#include <iostream>
+#include <vector>
+#include <map>
+#include <string>
+#include <algorithm>
+#include <cctype>
+#include <sstream>
+using namespace std;
+
+// Función para convertir palabra a minúsculas
+string to_lower(string s) {
+    for (char &c : s) c = tolower(c);
+    return s;
+}
+
+int main() {
+    string texto;
+    cout << "Ingresa un texto: ";
+    getline(cin, texto);
+
+    // --- PASO 1: Contar frecuencia con std::map ---
+    map<string, int> freq;
+    stringstream ss(texto);
+    string palabra;
+
+    while (ss >> palabra) {
+        // Limpiar: quitar puntuación básica
+        string limpia;
+        for (char c : palabra) {
+            if (isalpha(c)) limpia += tolower(c);
+        }
+        if (!limpia.empty()) {
+            freq[limpia]++;
+        }
+    }
+
+    // --- PASO 2: Pasar a vector para ordenar ---
+    vector<pair<int, string>> vec;
+    for (auto &p : freq) {
+        vec.push_back({p.second, p.first});  // (frecuencia, palabra)
+    }
+
+    // --- PASO 3: Ordenar: mayor frecuencia, luego alfabético ---
+    sort(vec.begin(), vec.end(), [](const pair<int, string> &a, const pair<int, string> &b) {
+        if (a.first != b.first) return a.first > b.first;  // Mayor frecuencia primero
+        return a.second < b.second;  // Si igual, alfabético
+    });
+
+    // --- MOSTRAR RESULTADO ---
+    cout << "\n--- Palabras ordenadas por frecuencia ---\n";
+    for (auto &p : vec) {
+        cout << p.second << ": " << p.first << endl;
+    }
+
+    // --- PASO 4: Encontrar k-ésima palabra más frecuente ---
+    int k;
+    cout << "\nIngresa k para la k-ésima palabra más frecuente: ";
+    cin >> k;
+
+    if (k > 0 && k <= vec.size()) {
+        cout << "La " << k << "-ésima palabra más frecuente es: \"" 
+             << vec[k-1].second << "\" (aparece " << vec[k-1].first << " veces)\n";
+    } else {
+        cout << "k fuera de rango. Hay solo " << vec.size() << " palabras únicas.\n";
+    }
+
+    return 0;
+}
