@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Estudiante{
+public:
+    string nombre;
+    int edad;
+    float promedio;
+
+    void mostrarInfo(){
+        cout << "Nombre: " << nombre << ", Edad: " << edad << ", Promedio: " << promedio << endl;
+    }
+};
+
+int main() {
+    Estudiante estudiantes[3];
+    float sumaProm=0;
+
+    // Agregar información
+    estudiantes[0] = {"Juan", 20, 8.5};
+    estudiantes[1] = {"Ana", 22, 9.2};
+    estudiantes[2] = {"Luis", 19, 7.8};
+
+    cout << "Lista de estudiantes:\n";
+    for(int i=0;i<3;i++){
+        estudiantes[i].mostrarInfo();
+        sumaProm += estudiantes[i].promedio;
+    }
+
+    cout << "Promedio general: " << sumaProm/3 << endl; // 8.5 aprox
+    return 0;
+}
+
