@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int mat[3][3]={{1,2,3},{4,5,6},{7,8,9}}, col=2, suma=0;
+    for(int i=0;i<3;i++) suma+=mat[i][col];
+    cout << "Suma columna " << col << ": " << suma << endl; // 18
+    return 0;
+}
