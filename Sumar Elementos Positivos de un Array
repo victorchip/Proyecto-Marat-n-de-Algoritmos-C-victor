@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[]={-1,2,3,-4,5}, n=5, suma=0;
+    for(int i=0;i<n;i++){
+        if(arr[i]>0) suma+=arr[i];
+    }
+    cout << "Suma de elementos positivos: " << suma << endl; // 10
+    return 0;
+}
