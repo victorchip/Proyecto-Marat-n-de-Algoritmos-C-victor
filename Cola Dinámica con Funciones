@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+class Cola {
+private:
+    int* arr;
+    int frente, fin, capacidad;
+public:
+    Cola(int size){
+        capacidad = size;
+        arr = new int[size];
+        frente = 0; fin = -1;
+    }
+
+    void encolar(int x){
+        if(fin == capacidad-1) { cout << "Cola llena\n"; return; }
+        arr[++fin] = x;
+    }
+
+    int desencolar(){
+        if(frente > fin) { cout << "Cola vacía\n"; return -1; }
+        return arr[frente++];
+    }
+
+    void mostrar(){
+        cout << "Cola: ";
+        for(int i=frente;i<=fin;i++) cout << arr[i] << " ";
+        cout << endl;
+    }
+
+    int contar(){ return fin-frente+1; }
+
+    ~Cola(){ delete[] arr; }
+};
+
+int main(){
+    Cola cola(5);
+    cola.encolar(10); cola.encolar(20); cola.encolar(30);
+    cola.mostrar();
+    cout << "Cantidad elementos: " << cola.contar() << endl; // 3
+    cola.desencolar();
+    cola.mostrar(); // 20 30
+    return 0;
+}
