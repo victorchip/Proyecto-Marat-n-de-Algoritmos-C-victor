@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+
+void trasponerRec(int mat[][3], int trans[][2], int i, int j, int m, int n){
+    if(i==m) return;
+    if(j<n){
+        trans[j][i] = mat[i][j];
+        trasponerRec(mat, trans, i, j+1, m, n);
+    } else trasponerRec(mat, trans, i+1, 0, m, n);
+}
+
+
+int main() {
+    int mat[2][3]={{1,2,3},{4,5,6}}, trans[3][2];
+    trasponerRec(mat, trans, 0, 0, 2, 3);
+    for(int i=0;i<3;i++){
+        for(int j=0;j<2;j++) cout << trans[i][j] << " ";
+        cout << endl;
+    }
+    return 0;
+}
