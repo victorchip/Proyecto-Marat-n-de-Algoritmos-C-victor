@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    char src[] = "Hola Mundo";
+    char dest[50];
+    char *pSrc = src;
+    char *pDest = dest;
+    while(*pSrc != '\0'){
+        *pDest = *pSrc;
+        pSrc++;
+        pDest++;
+    }
+    *pDest = '\0';
+    cout << "Cadena copiada: " << dest << endl; // Hola Mundo
+    return 0;
+}
+
