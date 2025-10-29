@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+
+int contarVocales(char *str){
+    if(*str=='\0') return 0;
+    char c = tolower(*str);
+    return ((c=='a'||c=='e'||c=='i'||c=='o'||c=='u')?1:0)+contarVocales(str+1);
+}
+
+
+int main() {
+    char cadena[]="Hola Mundo";
+    cout << "Cantidad de vocales: " << contarVocales(cadena) << endl; // 4
+    return 0;
+}
+
