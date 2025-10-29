@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[]={1,5,7,3,9}, n=5, X=4, contador=0;
+    for(int i=0;i<n;i++) if(arr[i]>X) contador++;
+    cout << "Elementos mayores que " << X << ": " << contador << endl; // 3
+    return 0;
+}
