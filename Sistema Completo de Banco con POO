@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class CuentaBancaria{
+private:
+    string titular;
+    float saldo;
+public:
+    CuentaBancaria(string n,float s){ titular=n; saldo=s; }
+    void depositar(float monto){ saldo+=monto; }
+    void retirar(float monto){ if(saldo>=monto) saldo-=monto; else cout<<"Saldo insuficiente\n"; }
+    void mostrar(){ cout << "Titular: " << titular << ", Saldo: " << saldo << endl; }
+    float getSaldo(){ return saldo; }
+};
+
+int main(){
+    CuentaBancaria c("Juan",1000);
+    c.mostrar();
+    c.depositar(500);
+    c.mostrar();
+    c.retirar(2000); // Saldo insuficiente
+    c.retirar(800);
+    c.mostrar(); // Saldo 700
+    return 0;
+}
